@@ -1,13 +1,5 @@
-package main
+package easy
 
-import (
-    "bufio"
-    "fmt"
-    "io"
-    "os"
-    "strconv"
-    "strings"
-)
 /*
 Create a 2-dimensional array, , of  empty arrays. All arrays are zero indexed.
 Create an integer, , and initialize it to .
@@ -26,7 +18,7 @@ Function Description
 Complete the dynamicArray function below.
 
 dynamicArray has the following parameters:
-- int n: the number of empty arrays to initialize in 
+- int n: the number of empty arrays to initialize in
 - string queries[q]: an array of query strings
 
 Returns
@@ -97,31 +89,31 @@ Query 4: Assign the value at index  of  to , print .
  */
 
 func dynamicArray(n int32, queries [][]int32) []int32 {
-    // Write your code here
-    ans := []int32{}
-    a := make([][]int32,n)
-    var lastAns int32 = 0
-    for i,v := range queries {
-        idx := (v[1] ^ lastAns) % n
-        //fmt.Printf("\n %v,idx: %v",v,idx)
-        switch v[0] {
-            case 1:
-               
-            a[idx]  = append(a[idx],v[2])
-            //fmt.Printf("\n1. %v",a[idx])
-            case 2:
-              ind := v[2] % int32(len(a[idx]))
-              lastAns = a[idx][ind]
-              ans = append(ans,lastAns)
-              //fmt.Printf("\n2, %v",ans)
-            default:
-            panic(i)
-        }
-    }
-    return ans
+	// Write your code here
+	ans := []int32{}
+	a := make([][]int32, n)
+	var lastAns int32 = 0
+	for i, v := range queries {
+		idx := (v[1] ^ lastAns) % n
+		//fmt.Printf("\n %v,idx: %v",v,idx)
+		switch v[0] {
+		case 1:
+
+			a[idx] = append(a[idx], v[2])
+		//fmt.Printf("\n1. %v",a[idx])
+		case 2:
+			ind := v[2] % int32(len(a[idx]))
+			lastAns = a[idx][ind]
+			ans = append(ans, lastAns)
+			//fmt.Printf("\n2, %v",ans)
+		default:
+			panic(i)
+		}
+	}
+	return ans
 }
 
-func main() {
+/*func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
 
     stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
@@ -188,4 +180,4 @@ func checkError(err error) {
     if err != nil {
         panic(err)
     }
-}
+}*/

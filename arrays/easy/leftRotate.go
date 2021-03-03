@@ -1,13 +1,4 @@
-package main
-
-import (
-    "bufio"
-    "fmt"
-    "io"
-    "os"
-    "strconv"
-    "strings"
-)
+package easy
 
 /*
 
@@ -59,19 +50,19 @@ To perform  left rotations, the array undergoes the following sequence of change
  */
 
 func rotateLeft(d int32, arr []int32) []int32 {
-    // Write your code here
-      var i int32
-        for i = 0; i < d ; i++ {
-            arr = append(arr,arr[0])
-            //fmt.Printf("\n1. %v",arr)
-            arr = arr[1:]
-            //fmt.Printf("\n2. %v",arr)
-        }
-        
-        return arr
+	// Write your code here
+	var i int32
+	for i = 0; i < d; i++ {
+		arr = append(arr, arr[0])
+		//fmt.Printf("\n1. %v",arr)
+		arr = arr[1:]
+		//fmt.Printf("\n2. %v",arr)
+	}
+
+	return arr
 }
 
-func main() {
+/*func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
 
     stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
@@ -130,4 +121,4 @@ func checkError(err error) {
     if err != nil {
         panic(err)
     }
-}
+}*/

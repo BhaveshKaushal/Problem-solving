@@ -1,13 +1,7 @@
-package main
+package easy
 
 import (
-	"bufio"
-	"fmt"
-	"io"
 	"math"
-	"os"
-	"strconv"
-	"strings"
 )
 
 /*
@@ -115,7 +109,7 @@ func hourglassSum(arr [][]int32) int32 {
 	return sum
 }
 
-func main() {
+/*func main() {
 	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
@@ -165,3 +159,4 @@ func checkError(err error) {
 		panic(err)
 	}
 }
+*/
