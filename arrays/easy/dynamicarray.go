@@ -1,16 +1,16 @@
 package easy
 
 /*
-Create a 2-dimensional array, , of  empty arrays. All arrays are zero indexed.
-Create an integer, , and initialize it to .
-There are  types of queries:
-Query: 1 x y
-Find the list within  at index .
-Append the integer  to the .
-Query: 2 x y
-Find the list within  at index .
-Find the value of element  where  is the number of elements in lastAnswer$.
-Print the new value of  on a new line
+Create a 2-dimensional array, arr, of n empty arrays. All arrays are zero indexed.
+Create an integer, lastAnswer, and initialize it to 0.
+There are 2 types of queries:
+1. Query: 1 x y
+    1. Find the list within  at index idx = ((x xor lastAnswer) % n).
+    2. Append the integer y to the arr[idx].
+2. Query: 2 x y
+    1.Find the list arr at index idx = ((x xor lastAnswer) % n).
+    2.Find the value of element  y % size(arr[idx]) where size is the number of elements in arr[idx]. Assign value to lastAnswer$.
+Print the new value of lastAnswer on a new line
 Note:  is the bitwise XOR operation, which corresponds to the ^ operator in most languages. Learn more about it on Wikipedia.  is the modulo operator.
 
 Function Description
@@ -95,17 +95,14 @@ func dynamicArray(n int32, queries [][]int32) []int32 {
 	var lastAns int32 = 0
 	for i, v := range queries {
 		idx := (v[1] ^ lastAns) % n
-		//fmt.Printf("\n %v,idx: %v",v,idx)
 		switch v[0] {
 		case 1:
 
 			a[idx] = append(a[idx], v[2])
-		//fmt.Printf("\n1. %v",a[idx])
 		case 2:
 			ind := v[2] % int32(len(a[idx]))
 			lastAns = a[idx][ind]
 			ans = append(ans, lastAns)
-			//fmt.Printf("\n2, %v",ans)
 		default:
 			panic(i)
 		}
