@@ -7,6 +7,39 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+/*
+Command: go test -timeout 60s -run ^TestTwoSum -v
+
+=== RUN   TestTwoSum
+=== RUN   TestTwoSum/Test_empty_array
+    twosum_test.go:84: Time Taken By BruteForce approach: 123ns
+    twosum_test.go:92: Time Taken By Optimized approach: 168ns
+=== RUN   TestTwoSum/Test_Single_Element_No_target
+    twosum_test.go:84: Time Taken By BruteForce approach: 76ns
+    twosum_test.go:92: Time Taken By Optimized approach: 217ns
+=== RUN   TestTwoSum/Test_Single_Element_and_same_target
+    twosum_test.go:84: Time Taken By BruteForce approach: 66ns
+    twosum_test.go:92: Time Taken By Optimized approach: 96ns
+=== RUN   TestTwoSum/Test_NO_Target_found_with_All_positive_integers
+    twosum_test.go:84: Time Taken By BruteForce approach: 129ns
+    twosum_test.go:92: Time Taken By Optimized approach: 294ns
+=== RUN   TestTwoSum/Test_NO_Target_found_with_All_negative_integers
+    twosum_test.go:84: Time Taken By BruteForce approach: 76ns
+    twosum_test.go:92: Time Taken By Optimized approach: 174ns
+=== RUN   TestTwoSum/Test_Target_found_with_All_negative_integers
+    twosum_test.go:84: Time Taken By BruteForce approach: 136ns
+    twosum_test.go:92: Time Taken By Optimized approach: 442ns
+=== RUN   TestTwoSum/Test_Target_found_with_All_positive_integers
+    twosum_test.go:84: Time Taken By BruteForce approach: 177ns
+    twosum_test.go:92: Time Taken By Optimized approach: 421ns
+=== RUN   TestTwoSum/Test_Target_found
+    twosum_test.go:84: Time Taken By BruteForce approach: 125ns
+    twosum_test.go:92: Time Taken By Optimized approach: 270ns
+=== RUN   TestTwoSum/Test_Target_found_with_long_array
+    twosum_test.go:84: Time Taken By BruteForce approach: 23.787799ms
+    twosum_test.go:92: Time Taken By Optimized approach: 1.215514ms
+
+*/
 func TestTwoSum(t *testing.T) {
 
 	tests := []struct {
