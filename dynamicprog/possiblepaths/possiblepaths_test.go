@@ -58,15 +58,8 @@ func TestPossiblePaths(t *testing.T) {
 
 			assert.Equal(t, test.expectedOutput, out)
 			t.Logf("Time Taken By BruteForce approach: %v", taken)
-
-			/*start = time.Now()
-
-			out = fibOptimized(test.input, nil)
-			end = time.Now()
-			taken = end.Sub(start)
-			assert.Equal(t, test.expectedOutput, out)
-			t.Logf("Time Taken By Memoized(optimized) algorithm: %v", taken)
-			*/
+			
+			
 		})
 
 	}
