@@ -1,4 +1,4 @@
-module problem-solving
+module github.com/BhaveshKaushal/problem-solving
 
 go 1.16
 
